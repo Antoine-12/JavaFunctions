@@ -31,6 +31,11 @@ public class fdX extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,6 +94,41 @@ public class fdX extends javax.swing.JFrame {
             }
         });
 
+        jButton7.setText("F(x)= sen(x)");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setText("F(x)= cos(x)");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jButton9.setText("F(x) = tan(x)");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setText("Circle1");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
+        jButton11.setText("Custom Circle");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -105,7 +145,12 @@ public class fdX extends javax.swing.JFrame {
                     .addComponent(jButton3)
                     .addComponent(jButton4)
                     .addComponent(jButton5)
-                    .addComponent(jButton6))
+                    .addComponent(jButton6)
+                    .addComponent(jButton7)
+                    .addComponent(jButton9)
+                    .addComponent(jButton8)
+                    .addComponent(jButton10)
+                    .addComponent(jButton11))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -127,7 +172,17 @@ public class fdX extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton6)))
+                        .addComponent(jButton6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton9)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton11)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -147,6 +202,13 @@ public class fdX extends javax.swing.JFrame {
         show.drawLine(50, 0, 50, 500);
         show.drawLine(350, 0, 350, 500);
         show.drawLine(450, 0, 450, 500);
+        
+        //vertical Lines
+        show.setColor(Color.LIGHT_GRAY);
+        show.drawLine(0, 150, 500, 150); 
+        show.drawLine(0, 50, 500, 50); 
+        show.drawLine(0, 350, 500, 350); 
+        show.drawLine(0, 450, 500, 450); 
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -171,6 +233,26 @@ public class fdX extends javax.swing.JFrame {
         function4();
     }//GEN-LAST:event_jButton6ActionPerformed
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        function5Sen();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        function6Cos();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        function7Tan();
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        circle1();
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        circle2();
+    }//GEN-LAST:event_jButton11ActionPerformed
+
     public void function1(){
         Graphics func = jPanel1.getGraphics();
         func.setColor(Color.blue);
@@ -193,8 +275,6 @@ public class fdX extends javax.swing.JFrame {
             
             func.drawOval(247+(int)(x*50), 247-(int)y, 6, 6);    
         }
-        
-        
     }
     
     public void function3(){
@@ -204,7 +284,6 @@ public class fdX extends javax.swing.JFrame {
         String num = JOptionPane.showInputDialog(this, "enter you number: ");
         
         double nm = Double.parseDouble(num);
-        
         
     for (double x = -250; x <= 250; x+=0.6) {
         double y;
@@ -218,13 +297,9 @@ public class fdX extends javax.swing.JFrame {
                 y = -y; // Manejo de raíces impares negativas
             }
         }
-            
             func.drawOval(247 +(int)(x*20), 247-(int)y, 6, 6);
-            
-            
         }
-        
-        
+    
     }
     
     public void function4(){
@@ -240,29 +315,198 @@ public class fdX extends javax.swing.JFrame {
         return;
     }
 
-    for (double x = 1; x <= 250; x+=0.5) { // Empezamos en x = 1 porque log(x) no existe para x <= 0
+    for (double x = 1; x <= 250; x+=1.0) { // Empezamos en x = 1 porque log(x) no existe para x <= 0
+        if(x == 0) continue;
         double y = (Math.log(x) / Math.log(nm)) * 100; // Aplicar escala
 
-        func.drawOval(250 + (int)(x * 2), 250 - (int)y, 6, 6); // Se ajusta la escala en x
+        func.drawOval(247 + (int)(x * 2), 247 - (int)y, 6, 6); 
     }
  
         
     }
-    public void function5(){
+    
+    public void function5Sen(){
+        Graphics func = jPanel1.getGraphics();
+        func.setColor(Color.pink);
+        
+        for (int x = -250; x < 250; x++) {
+            double upd = Math.toRadians(x);
+            double y = Math.sin(upd)*100;
+            
+            func.drawOval(247 +x, 247-(int)y, 6, 6);
+        }
         
     }
-    public void function6(){
+    
+    public void function6Cos(){
+         Graphics func = jPanel1.getGraphics();
+        func.setColor(Color.green);
+        
+        for (int x = -250; x < 250; x++) {
+            double upd = Math.toRadians(x);
+            double y = Math.cos(upd)*100;
+            func.drawOval(247 +x, 247-(int)y, 6, 6);
+        }
         
     }
+    
+    public void function7Tan(){
+        Graphics func = jPanel1.getGraphics();
+        func.setColor(Color.CYAN);
+        
+        for (int x = -250; x < 250; x++) {
+            double upd = Math.toRadians(x);
+            double y = Math.tan(upd)*100;
+            
+            func.drawOval(247+x, 247-(int)y, 6, 6);
+        }
+        
+    }
+    
+    public void circle1(){
+        Graphics func = jPanel1.getGraphics();
+        
+        
+        String [] sC = {"RED", "YELLOW","BLUE"};
+        int coc = JOptionPane.showOptionDialog(this, "PICK your favorite color", "",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, sC,sC[0]);
+        
+        switch (coc){
+            case 0:
+              func.setColor(Color.RED);  
+              break;
+            case 1:
+              func.setColor(Color.yellow);
+              break;
+            case 2:
+              func.setColor(Color.blue);
+              break;  
+        }
+         
+        double radN = -1; 
+
+        while (radN <= 0) {
+            String rad = JOptionPane.showInputDialog(this, "Enter your circle's radius (must be greater than 0):");
+        try {
+        radN = Double.parseDouble(rad);
+        if (radN <= 0) {
+            JOptionPane.showMessageDialog(this, "The radius must be greater than 0. Please try again.");
+            }
+        } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Invalid input. Please enter a valid number.");
+            }
+         }
+        try{
+            
+        String nm1 = JOptionPane.showInputDialog(this,"please enter you cordenate X");
+        String nm2 = JOptionPane.showInputDialog(this,"please enter you cordenate Y");
+        
+        int x = Integer.parseInt(nm1);
+        int y = Integer.parseInt(nm2);
+        
+        int vS = (int)(radN*2);
+        int mid = (int)(vS/2.0);
+        
+        func.drawOval(250-mid+x, 250-mid-y, vS, vS);
+        
+        
+        //Area
+        double area = Math.PI * Math.pow(radN, 2);
+        //perimeter
+        double perim = 2 * Math.PI * radN;
+        JOptionPane.showMessageDialog(this,"the Area is: "+area +"\n The perimeter is: "+perim);  
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "you messed up, try again pls");
+        }
+        
+        
+        
+    }
+    
+    public void circle2(){
+        Graphics func = jPanel1.getGraphics();
+        func.setColor(Color.blue);
+        try{
+            
+        String cod1 = JOptionPane.showInputDialog(this,"Please enter your coordante X: ");
+        String cod2 = JOptionPane.showInputDialog(this,"Please enter your coordante Y: ");
+        
+        int po1 = Integer.parseInt(cod1);
+        int po2 = Integer.parseInt(cod2);
+        
+        int cl = -1; 
+        int rat = -1;
+
+        while (cl <= 0) {
+            String cir = JOptionPane.showInputDialog(this, "how many circles do you wanna perform?");
+        try {
+        cl = Integer.parseInt(cir);
+        if (cl <= 0) {
+            JOptionPane.showMessageDialog(this, "The number must be greater than 0. Please try again.");
+            }
+        } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Invalid input. Please enter a valid number.");
+            }
+         }
+        
+        while(rat <= 0){
+            String rad = JOptionPane.showInputDialog(this, "the radio will increase based on the entered number");
+            try{
+                rat = Integer.parseInt(rad);
+            if (rat <= 0) {
+                JOptionPane.showMessageDialog(this, "The radio must be greater than 0. Please try again.");
+            }
+            }
+            catch(Exception e){
+                     JOptionPane.showMessageDialog(this, "Invalid input. Please enter a valid number.");
+                    }
+        }
+        
+        String [] sC = {"RED","BLUE","YELLOW"};
+        int coc = JOptionPane.showOptionDialog(this,"Pick your color","Primary colors",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, sC,sC[0]);
+        
+        switch(coc){
+            case 0:
+                func.setColor(Color.red);
+                break;
+            case 1:
+                func.setColor(Color.blue);
+                break;
+            case 2:
+                func.setColor(Color.yellow);
+                break;
+        }
+        
+        for (int x = 0; x < cl; x++) {
+            
+            int rdo = (x+1)*rat *2;
+            int mid = rdo / 2;
+            
+            func.drawOval((250+po1)-mid, (250-po2)-mid, rdo, rdo);
+            
+        }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Sorry you messed up, try again");
+        }   
+    }
+    
     
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
