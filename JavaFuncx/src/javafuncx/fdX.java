@@ -36,6 +36,9 @@ public class fdX extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         jButton10 = new javax.swing.JButton();
         jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -129,6 +132,27 @@ public class fdX extends javax.swing.JFrame {
             }
         });
 
+        jButton12.setText("Triangle Rect");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        jButton13.setText("Hypotenus Tiangle");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
+        jButton14.setText("loop Triangle");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -136,22 +160,33 @@ public class fdX extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2))
-                    .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6)
-                    .addComponent(jButton7)
-                    .addComponent(jButton9)
-                    .addComponent(jButton8)
-                    .addComponent(jButton10)
-                    .addComponent(jButton11))
-                .addContainerGap(25, Short.MAX_VALUE))
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton2))
+                            .addComponent(jButton3)
+                            .addComponent(jButton4)
+                            .addComponent(jButton5)
+                            .addComponent(jButton6)
+                            .addComponent(jButton7)
+                            .addComponent(jButton9)
+                            .addComponent(jButton8)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton12)
+                                    .addComponent(jButton10))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jButton11)
+                                    .addComponent(jButton13)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addComponent(jButton14)))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,9 +215,16 @@ public class fdX extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton9)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton11)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton11)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton10)
+                                .addGap(36, 36, 36)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButton12)
+                                    .addComponent(jButton13))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton14)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -253,6 +295,18 @@ public class fdX extends javax.swing.JFrame {
         circle2();
     }//GEN-LAST:event_jButton11ActionPerformed
 
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        recTriangle();
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        hypotenusT();
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        loopT();
+    }//GEN-LAST:event_jButton14ActionPerformed
+
     public void function1(){
         Graphics func = jPanel1.getGraphics();
         func.setColor(Color.blue);
@@ -301,6 +355,7 @@ public class fdX extends javax.swing.JFrame {
         }
     
     }
+    
     
     public void function4(){
         Graphics func = jPanel1.getGraphics();
@@ -493,12 +548,124 @@ public class fdX extends javax.swing.JFrame {
         }   
     }
     
+    public void recTriangle(){
+        Graphics rT = jPanel1.getGraphics();
+        
+        String [] colors = {"red","yellow","blue"};
+        int selC = JOptionPane.showOptionDialog(this, "Pick your favorite color","Chose your color",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, colors, colors[0]);
+        switch(selC){
+            case 0:
+                rT.setColor(Color.red);
+                break;
+                
+            case 1:
+                rT.setColor(Color.yellow);
+                break;
+                
+            case 2:
+                rT.setColor(Color.blue);
+                break;
+                
+        }
+        try{
+            
+        String bs = JOptionPane.showInputDialog(this, "please enter your base: ");
+        int base = Integer.parseInt(bs);
+        
+        String hg = JOptionPane.showInputDialog(this, "please enter your base: ");
+        int height = Integer.parseInt(hg);
+        
+        int [] x = {250, 250+base, 250-0};
+        int [] y = {250, 250+0,250-height};
+        
+        rT.drawPolygon(x, y, 3);
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "you messed up");
+        }
+            
+        
+    }
     
-   
+    public void hypotenusT(){
+        Graphics hT = jPanel1.getGraphics();
+        try{
+            
+         String pts = JOptionPane.showInputDialog(this, "please enter your coodentes X and y : ");
+         
+         String [] points = pts.split(",");
+         
+         int px = Integer.parseInt(points[0]);
+         int py = Integer.parseInt(points[1]);
+         
+         String bs = JOptionPane.showInputDialog(this, "enter you base: ");
+         double base = Double.parseDouble(bs);
+         
+         String hg = JOptionPane.showInputDialog(this, "enter you base: ");
+         double height = Double.parseDouble(hg);
+         
+         
+         int [] x = {250+px, 250+(int)base+px, 250-0+px};
+        int [] y = {250-py, 250+0-py,250-(int)height-py};
+        
+        hT.drawPolygon(x, y, 3);
+        
+        double hypotenus = Math.sqrt(Math.pow(height, 2)+ Math.pow(base, 2));
+        JOptionPane.showMessageDialog(this, "the Hypotenus of the triangle is: "+hypotenus);
+         
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "something went wrong try again pls");
+        }
+        
+        
+        
+    }
+    
+    public void loopT(){
+        Graphics lT = jPanel1.getGraphics();
+        try{
+            
+        
+        String bs = JOptionPane.showInputDialog(this, "enter your base: ");
+        int base = Integer.parseInt(bs);
+        
+        
+        String hg = JOptionPane.showInputDialog(this, "enter your hight: ");
+        int height = Integer.parseInt(hg);
+        
+        String dts = JOptionPane.showInputDialog(this, "enter your distance of each triangle: ");
+        int dis = Integer.parseInt(dts);
+        
+        for (int x = 0; x < 5; x++) {
+            
+            int y = (x+1)*dis;
+            int [] x1 = {250+y, 250+base+y, 250-0+y};
+            int [] y1 = {250, 250+0,250-height};
+        
+        lT.drawPolygon(x1 , y1, 3);
+        }
+            
+            
+            
+        }
+         catch(Exception e){
+                    JOptionPane.showMessageDialog(this, "Sorry you messed up, try again");
+                    }
+        
+        
+        
+    }
+    
+    
+     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
