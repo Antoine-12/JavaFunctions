@@ -7,4 +7,8 @@ public class User {
     public String name;
     public int role;
     public String password;
+
+
+    
 }
+
