@@ -92,7 +92,7 @@ public class BookQueries extends javax.swing.JFrame {
 
    public void addBook(){
        
-       String header [] = {"Caption","Author","Release date","Category","Price","Code"};
+       String header [] = {"Caption","Author","Category","Price","Code"};
        
        DefaultTableModel t = new DefaultTableModel(header,LoginU.books.size());
        
@@ -103,12 +103,11 @@ public class BookQueries extends javax.swing.JFrame {
        for (int i = 0; i < LoginU.books.size(); i++) {
            Book bo = LoginU.books.get(i);
            
-           tabla.setValueAt(bo.TitleP, i, 0);
-           tabla.setValueAt(bo.Author, i, 1);
-           tabla.setValueAt(bo.ReleaseD, i, 2);
-           tabla.setValueAt(bo.Category, i, 3);
-           tabla.setValueAt(bo.Price, i, 4);
-           tabla.setValueAt(bo.BookCode, i, 5);
+           tabla.setValueAt(bo.getTitleP(), i, 0);
+           tabla.setValueAt(bo.getAuthor(), i, 1);
+           tabla.setValueAt(bo.getCategory(), i, 2);
+           tabla.setValueAt(bo.getPrice(), i, 3);
+           tabla.setValueAt(bo.getBookCode(), i, 4);
            
        }
        

@@ -13,10 +13,10 @@ public class LoginU {
    
         User du = new User();
          
-        du.usr = "admin";
-        du.name = "Osmar";
-        du.password = "admin";
-        du.role = 1;
+        du.setUsr("admin");
+        du.setName("Osmar");
+        du.setPassword("admin");
+        du.setRole(1);
         
        LoginU.user.add(du);
         

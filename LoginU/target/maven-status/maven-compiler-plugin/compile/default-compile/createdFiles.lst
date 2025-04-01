@@ -1,8 +1,11 @@
 com\mycompany\loginu\NewUser.class
 com\mycompany\loginu\BookQueries$1.class
 com\mycompany\loginu\pManager$2.class
+com\mycompany\loginu\queryCx$3.class
 com\mycompany\loginu\LoginU.class
+com\mycompany\loginu\pManager$4.class
 com\mycompany\loginu\NewBook$1.class
+com\mycompany\loginu\ToolBox.class
 com\mycompany\loginu\NewBook$2.class
 com\mycompany\loginu\User.class
 com\mycompany\loginu\NewUser$3.class
@@ -13,7 +16,9 @@ com\mycompany\loginu\toLogin$2.class
 com\mycompany\loginu\EbookShelf.class
 com\mycompany\loginu\vSeller.class
 com\mycompany\loginu\pManager$3.class
+com\mycompany\loginu\queryCx$4.class
 com\mycompany\loginu\NewUser$4.class
+com\mycompany\loginu\queryCx$2.class
 com\mycompany\loginu\pManager$1.class
 com\mycompany\loginu\pManager.class
 com\mycompany\loginu\NewBook.class

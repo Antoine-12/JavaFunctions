@@ -16,10 +16,7 @@ public class NewUser extends javax.swing.JFrame {
     public NewUser() {
         initComponents();
         setLocationRelativeTo(null);
-        jComboBox1.removeAllItems();
-        
-        jComboBox1.addItem("Manager");
-        jComboBox1.addItem("Seller");
+        ToolBox.setupUserRoles(jComboBox1);
         
     }
 
@@ -155,44 +152,31 @@ public class NewUser extends javax.swing.JFrame {
     public void nUser(){
         User cx = new User();
         
-        cx.usr = jTextField1.getText();
-        cx.name = jTextField2.getText();
-        cx.password = jTextField3.getText();
+        cx.setUsr(jTextField1.getText());
+        cx.setName(jTextField2.getText());
+        cx.setPassword(jTextField3.getText());
         String role = jComboBox1.getSelectedItem().toString();
         
         if (role.equals("Manager")) {
-            cx.role = 1;
+            cx.setRole(1);
         }else{
-            cx.role = 2;
+            cx.setRole(2);
         }
     
         boolean exists = false; // Flag to check if user already exists
 
         if (jTextField3.getText().length() < 6) {
-            JOptionPane.showMessageDialog(this, "your password should contain at least 6 caracters");
+            JOptionPane.showMessageDialog(this, "Please enter a password with at least 6 characters.");
             return;
         }
-        boolean pUppercase = false;
-        boolean pLowercase = false;
-        boolean pNumber = false;
         
-      for (char c : cx.password.toCharArray()) {
-        if (Character.isUpperCase(c)) {
-            pUppercase = true;
-        } else if (Character.isLowerCase(c)) {  
-            pLowercase = true;
-        } else if (Character.isDigit(c)) {
-            pNumber = true;
+        if (!ToolBox.verPass(cx.getPassword())) {
+            JOptionPane.showMessageDialog(this, "Password must contain at least\n one uppercase letter,\n one lowercase letter,\n one number.");
+            return;
         }
-    }
-    // Final password validation // check if password meet the criteria
-    if (!pUppercase || !pLowercase || !pNumber) {
-        JOptionPane.showMessageDialog(this, "Password must contain at least\n one uppercase letter,\n one lowercase letter,\n one number.");
-        return;
-    }
   
     for (User u : LoginU.user) {
-        if (u.usr.equals(jTextField1.getText())) {
+        if (u.getUsr().equals(jTextField1.getText())) {
             JOptionPane.showMessageDialog(this, "That userID is already registered\nTry another one");
             exists = true;
             break; // Stop checking once a duplicate is found   
@@ -202,25 +186,12 @@ public class NewUser extends javax.swing.JFrame {
         if (!exists) { // Only add the user if they don’t exist
         LoginU.user.add(cx);
         JOptionPane.showMessageDialog(this, "Account successfully created");
-        clean();
+        ToolBox.clearjTextf(jTextField1, jTextField2, jTextField3);
         }
          
     }
-    
-    /*
-    private boolean isValidPassword(String password) {
-    // Regular expression to check password requirements
-    String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{6,}$";
-    return password.matches(regex);
-}
-   */
-     public void clean(){
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextField3.setText("");
-        
-    }
-     
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
