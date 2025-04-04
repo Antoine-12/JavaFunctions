@@ -131,7 +131,7 @@ public class NewBook extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         saved();
-        clean();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     
@@ -146,14 +146,10 @@ public class NewBook extends javax.swing.JFrame {
        LogU.books.add(bk);
        
        JOptionPane.showMessageDialog(this, "your request was successfully completed");
+       ToolBox.cleanjtxt(jTextField1,jTextField2,jTextField3,jTextField4);
     }
     
-    public void clean(){
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextField3.setText("");
-        jTextField4.setText("");
-    }
+   
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

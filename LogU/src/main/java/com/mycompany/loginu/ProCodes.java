@@ -1,6 +1,7 @@
 
 package com.mycompany.loginu;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
@@ -9,13 +10,17 @@ import javax.swing.table.TableModel;
  * @author osmar
  */
 public class ProCodes extends javax.swing.JFrame {
+    
+    private PromoCode pm;
 
     /**
      * Creates new form ProCodes
      */
     public ProCodes() {
         initComponents();
+        setLocationRelativeTo(null);
         TableCod();
+        jcomob();
     }
 
     /**
@@ -30,6 +35,15 @@ public class ProCodes extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -53,15 +67,64 @@ public class ProCodes extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Promotional Code");
+
+        jLabel2.setText("Discount Value");
+
+        jLabel3.setText("Usage Limit");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jButton2.setText("Remove");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Update");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Save Chgs");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(52, 52, 52)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(34, 34, 34)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3)
+                    .addComponent(jButton4))
                 .addGap(21, 21, 21))
         );
         layout.setVerticalGroup(
@@ -73,8 +136,24 @@ public class ProCodes extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addComponent(jButton1)))
-                .addContainerGap(121, Short.MAX_VALUE))
+                        .addComponent(jButton1)
+                        .addGap(63, 63, 63)
+                        .addComponent(jButton2)
+                        .addGap(65, 65, 65)
+                        .addComponent(jButton3)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2)
+                        .addComponent(jLabel3))
+                    .addComponent(jButton4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         pack();
@@ -84,7 +163,20 @@ public class ProCodes extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    public void TableCod(){
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        removeT();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        updateT();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        saveT();
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void TableCod(){
         String header [] = {"Promo Code","Discount Value","Usage Limit"};
         
         DefaultTableModel t = new DefaultTableModel(header,LogU.prco.size());
@@ -102,10 +194,88 @@ public class ProCodes extends javax.swing.JFrame {
         
     }
     
+    private void removeT(){
+        int dld = jTable1.getSelectedRow();
+        
+        if (dld >-1) {
+            if (JOptionPane.showConfirmDialog(this, "Do you want to process with your request?")==0) {
+                LogU.prco.remove(dld);
+                TableCod();
+                JOptionPane.showMessageDialog(this, "Request successfully completed");
+            }
+        }else{
+            JOptionPane.showMessageDialog(this, "Please select a code from the Table");
+        }
+    }
+    
+    private void updateT(){
+        int updt = jTable1.getSelectedRow();
+        
+        if (updt >-1) {
+            
+            pm = LogU.prco.get(updt);
+            
+            jTextField1.setText(pm.getpCode());
+            jComboBox1.setSelectedItem(String.valueOf(pm.getDiscount()));
+            jComboBox2.setSelectedItem(String.valueOf(pm.getUsageLim()));
+            
+            
+        }else{
+            JOptionPane.showMessageDialog(this, "Please select a row to update");
+        }
+        
+    }
+    
+    private void saveT(){
+        if (pm != null) {
+        pm.setpCode(jTextField1.getText());
+        String dv = jComboBox1.getSelectedItem().toString();
+        String ul = jComboBox2.getSelectedItem().toString();
+        
+        int dv1 = Integer.parseInt(dv);
+        pm.setDiscount(dv1);
+        int ul1 = Integer.parseInt(ul);
+            pm.setUsageLim(ul1);
+        }
+        
+        TableCod();
+        JOptionPane.showMessageDialog(this, "Row successfully updated");
+        cleajcm();
+    }
+    
+    private void jcomob(){
+        jComboBox1.removeAllItems();
+        jComboBox1.addItem("");
+        jComboBox1.addItem("80");
+        jComboBox1.addItem("50");
+        jComboBox1.addItem("30");
+        jComboBox1.addItem("20");
+        
+        jComboBox2.removeAllItems();
+        jComboBox2.addItem("");
+        jComboBox2.addItem("60");
+        jComboBox2.addItem("40");
+        jComboBox2.addItem("20");
+        
+    }
+    private void cleajcm(){
+        jTextField1.setText("");
+        jComboBox1.setSelectedIndex(-1);
+        jComboBox2.setSelectedIndex(-1);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,7 +17,9 @@ public class NewPco extends javax.swing.JFrame {
      */
     public NewPco() {
         initComponents();
-        jcomob1();
+        jcomob();
+       
+                
     }
 
     /**
@@ -77,10 +79,10 @@ public class NewPco extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox1, 0, 84, Short.MAX_VALUE)
+                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(42, 42, 42)
                         .addComponent(jButton1)
@@ -130,28 +132,36 @@ public class NewPco extends javax.swing.JFrame {
         
         int discv = Integer.parseInt(disv);
         pc.setDiscount(discv); 
-        
         int usagl = Integer.parseInt(usgl);
         pc.setUsageLim(usagl);
+
         
         LogU.prco.add(pc);
-        
         JOptionPane.showMessageDialog(this, "Code successfully generated");
-        
-        
+        cleajcm();
+    
     }
     
-    private void jcomob1(){
+        private void jcomob(){
         jComboBox1.removeAllItems();
+        
         jComboBox1.addItem("80");
         jComboBox1.addItem("50");
         jComboBox1.addItem("30");
         jComboBox1.addItem("20");
         
         jComboBox2.removeAllItems();
-        jComboBox2.addItem("15");
+
+        jComboBox2.addItem("60");
+        jComboBox2.addItem("40");
         jComboBox2.addItem("20");
         
+    }
+   
+        private void cleajcm(){
+        jTextField1.setText("");
+        jComboBox1.setSelectedIndex(-1);
+        jComboBox2.setSelectedIndex(-1);
     }
    
 

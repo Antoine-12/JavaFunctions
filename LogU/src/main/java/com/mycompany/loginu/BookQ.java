@@ -271,7 +271,9 @@ public class BookQ extends javax.swing.JFrame {
         
         queryTable();
         JOptionPane.showMessageDialog(this, "Book successfully updated ");
+        ToolBox.cleanjtxt(jTextField1,jTextField2,jTextField3,jTextField4);
     }
+
     
     
     

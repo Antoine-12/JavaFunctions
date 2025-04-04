@@ -197,7 +197,8 @@ public class newUser extends javax.swing.JFrame {
         jTextField1.setText("");
         jTextField2.setText("");
         jTextField3.setText("");
-       // jTextField4.setText("");
+        jComboBox1.setSelectedIndex(-1);
+       
     }
    
 
