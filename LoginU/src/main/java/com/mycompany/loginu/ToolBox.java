@@ -2,7 +2,7 @@
 package com.mycompany.loginu;
 
 import javax.swing.JComboBox;
-import javax.swing.JOptionPane;
+
 
 import javax.swing.JTextField;
 
@@ -12,6 +12,10 @@ public class ToolBox {
         comboBox.removeAllItems();
         comboBox.addItem("Manager");
         comboBox.addItem("Seller");
+    }
+    
+    public static void setupPromoC(JComboBox<String> comboBox){
+        comboBox.removeAllItems();
     }
     
     public static void clearjTextf(JTextField... fields){

@@ -8,6 +8,7 @@ public class LoginU {
 
     public static ArrayList<User> user = new ArrayList(); 
     public static ArrayList<Book> books = new ArrayList();
+    public static ArrayList<PromotionalCode> Poc = new ArrayList();
     
     public static void main(String[] args) {
    
@@ -19,6 +20,9 @@ public class LoginU {
         du.setRole(1);
         
        LoginU.user.add(du);
+       
+       DefaultData.books();
+       DefaultData.pCodes();
         
     toLogin sign = new toLogin();
     sign.setVisible(true);

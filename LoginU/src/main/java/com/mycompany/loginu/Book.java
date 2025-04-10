@@ -3,21 +3,11 @@ package com.mycompany.loginu;
 
 public class Book {
     
-    private int BookCode;
     private String TitleP;
     private String Author;
-    private String Category;
-    private int ReleaseD;
     private double Price;
     private  int Amount;
-
-    public int getBookCode() {
-        return BookCode;
-    }
-
-    public void setBookCode(int BookCode) {
-        this.BookCode = BookCode;
-    }
+    private String Category;
 
     public String getTitleP() {
         return TitleP;
@@ -43,14 +33,6 @@ public class Book {
         this.Category = Category;
     }
 
-    public int getReleaseD() {
-        return ReleaseD;
-    }
-
-    public void setReleaseD(int ReleaseD) {
-        this.ReleaseD = ReleaseD;
-    }
-
     public double getPrice() {
         return Price;
     }
@@ -66,6 +48,8 @@ public class Book {
     public void setAmount(int Amount) {
         this.Amount = Amount;
     }
+
+   
     
     
 }

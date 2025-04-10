@@ -39,6 +39,15 @@ public class toLogin extends javax.swing.JFrame {
 
         jLabel2.setText("Password:");
 
+        jTextField1.setText("admin");
+
+        jTextField2.setText("admin");
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+
         jButton1.setText("Sign In");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +114,10 @@ public class toLogin extends javax.swing.JFrame {
         NewUser nU = new NewUser();
         nU.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     
     public void signIN(){
