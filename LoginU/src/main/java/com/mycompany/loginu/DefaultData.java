@@ -45,14 +45,14 @@ public class DefaultData {
         Book bk1 = new Book();
         bk1.setTitleP("The Journey");
         bk1.setAuthor("MOssa");
-        bk1.setPrice(80);
+        bk1.setPrice(80.32);
         bk1.setAmount(20);
         bk1.setCategory("Theory");
         
         Book bk2 = new Book();
         bk2.setTitleP("Positive Thinking");
         bk2.setAuthor("Norman Vicent");
-        bk2.setPrice(560.56);
+        bk2.setPrice(60.56);
         bk2.setAmount(300);
         bk2.setCategory("self-help");
         

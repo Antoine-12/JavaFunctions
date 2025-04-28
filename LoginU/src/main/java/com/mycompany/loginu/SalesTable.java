@@ -62,7 +62,7 @@ public class SalesTable extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 874, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 945, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -93,7 +93,7 @@ public class SalesTable extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void showTable(){
-        String header [] = {"Seller","Book","Price","Quantity","NO VAT","VAT","Grand TT","CX","NIT","Address"};
+        String header [] = {"Seller","Book","Price","Quantity","NO VAT","VAT","Grand TT","Date","CX","NIT","Address"};
         
         DefaultTableModel tb = new DefaultTableModel(header,LoginU.stockT.size());
         jTable1.setModel(tb);
@@ -111,9 +111,10 @@ public class SalesTable extends javax.swing.JFrame {
             tbl.setValueAt(tk.getNoVat(), i, 4);
             tbl.setValueAt(String.valueOf(tk.getVAT()), i, 5);
             tbl.setValueAt(tk.getTotal(), i, 6);
-            tbl.setValueAt(tk.getCustomer(), i, 7);
-            tbl.setValueAt(tk.getNIT(), i, 8);
-            tbl.setValueAt(tk.getAddress(), i, 9);
+            tbl.setValueAt(tk.getDate(), i, 7);
+            tbl.setValueAt(tk.getCustomer(), i, 8);
+            tbl.setValueAt(tk.getNIT(), i, 9);
+            tbl.setValueAt(tk.getAddress(), i, 10);
             
         }
     }

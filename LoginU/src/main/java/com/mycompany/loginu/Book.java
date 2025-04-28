@@ -9,6 +9,8 @@ public class Book {
     private  int Amount;
     private String Category;
     
+    
+    
     @Override
     public String toString() {
     return this.getTitleP();

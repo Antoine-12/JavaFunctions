@@ -39,9 +39,9 @@ public class toLogin extends javax.swing.JFrame {
 
         jLabel2.setText("Password:");
 
-        jTextField1.setText("admin");
+        jTextField1.setText("A2");
 
-        jTextField2.setText("admin");
+        jTextField2.setText("Ab1234");
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);

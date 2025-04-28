@@ -11,8 +11,10 @@ public class StockTaking {
     private double Total;
     private String seller;
     private String customer;
-    private int NIT;
+    private String NIT;
+    private String date;
     private String Address;
+    
 
     public String getCaption() {
         return caption;
@@ -70,14 +72,6 @@ public class StockTaking {
         this.customer = customer;
     }
 
-    public int getNIT() {
-        return NIT;
-    }
-
-    public void setNIT(int NIT) {
-        this.NIT = NIT;
-    }
-
     public String getAddress() {
         return Address;
     }
@@ -93,6 +87,24 @@ public class StockTaking {
     public void setNoVat(double noVat) {
         this.noVat = noVat;
     }
+
+    public String getNIT() {
+        return NIT;
+    }
+
+    public void setNIT(String NIT) {
+        this.NIT = NIT;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    
     
     
 }

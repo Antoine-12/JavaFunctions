@@ -4,12 +4,14 @@ package com.mycompany.loginu;
 
 import java.util.ArrayList;
 
+
 public class LoginU {
 
     public static ArrayList<User> user = new ArrayList<>(); 
     public static ArrayList<Book> books = new ArrayList<>();
     public static ArrayList<PromotionalCode> Poc = new ArrayList<>();
     public static ArrayList<StockTaking> stockT = new ArrayList<>();
+     
     
     public static void main(String[] args) {
    
