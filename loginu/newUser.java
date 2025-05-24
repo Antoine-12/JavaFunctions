@@ -1,6 +1,11 @@
 
 package com.mycompany.loginu;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -184,6 +189,7 @@ public class newUser extends javax.swing.JFrame {
         
         if (!exist) {
             LogU.users.add(u);
+            saveUser();
             JOptionPane.showMessageDialog(this, "Account successfully created");
         clean();
         }
@@ -191,6 +197,40 @@ public class newUser extends javax.swing.JFrame {
         
         }
         
+    }
+    
+    public void saveUser(){
+        
+        FileWriter folder = null;
+                PrintWriter write = null;
+            try {
+                folder = new FileWriter("QueryCx.xml");
+                write = new PrintWriter(folder);
+                
+                write.println("<users>");
+                
+                    for(User us: LogU.users){
+                        
+                        write.println("<user>");
+                            write.println("<name>"+us.getName()+"</name>");
+                            write.println("<usr>"+us.getUser()+"</usr>");
+                            write.println("<password>"+us.getPassword()+"</password>");
+                            write.println("<role>"+us.getRole()+"</role>");
+                        
+                        write.println("</user>");
+                        
+                    }
+                write.println("</users>");
+                
+            } catch (IOException ex) {
+                Logger.getLogger(newUser.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                try {
+                    folder.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(newUser.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
     }
     
    public void jcombo(){ 

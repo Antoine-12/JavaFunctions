@@ -9,12 +9,15 @@ import javax.swing.JOptionPane;
  */
 public class toLogin extends javax.swing.JFrame {
 
+    ToolBox tb = new ToolBox();
     /**
      * Creates new form toLogin
      */
     public toLogin() {
         initComponents();
         setLocationRelativeTo(null);
+        tb.loadQuery();
+        
     }
 
     /**

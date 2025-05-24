@@ -12,6 +12,7 @@ import javax.swing.table.TableModel;
 public class ChangePass extends javax.swing.JFrame {
 
     private User currentUsr;
+    ToolBox tbo = new ToolBox();
     /**
      * Creates new form ChangePass
      */
@@ -247,6 +248,7 @@ public class ChangePass extends javax.swing.JFrame {
             currentUsr.setPassword(jTextField3.getText());
      
             JOptionPane.showMessageDialog(this, "Your PASSWORD has ben successfully updated");
+            tbo.writeFiled();
             ToolBox.cleanjtxt(jTextField3);
         }else{
             JOptionPane.showMessageDialog(this, "PLEASE FILL EMPTY FIELDS");

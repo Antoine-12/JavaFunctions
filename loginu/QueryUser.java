@@ -2,6 +2,11 @@
 package com.mycompany.loginu;
 
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -11,12 +16,14 @@ import javax.swing.table.TableModel;
 public class QueryUser extends javax.swing.JFrame {
     
     private User us;
+    ToolBox tx = new ToolBox();
 
     /**
      * Creates new form seekUser
      */
     public QueryUser() {
         initComponents();
+        tx.loadQuery();
         consult();
         jcombo();
        
@@ -223,6 +230,7 @@ public class QueryUser extends javax.swing.JFrame {
            }else{
                if (JOptionPane.showConfirmDialog(this, "Do you wanna proces with your request?")==0) {
                    LogU.users.remove(delete);
+                   writeFiled();
                    consult();
                    JOptionPane.showMessageDialog(this, "User successfully removed");
                }
@@ -276,10 +284,44 @@ public class QueryUser extends javax.swing.JFrame {
            return;
        }
        consult();
+       writeFiled();
        JOptionPane.showMessageDialog(this, "User successfully updated");
        jComboBox1.setSelectedIndex(-1);
         }
        
+   }
+   
+   private void writeFiled(){
+       
+       FileWriter folder = null;
+       PrintWriter write = null;
+            try {
+                folder = new FileWriter("QueryCx.xml");
+                write = new PrintWriter(folder);
+                
+                write.println("<users>");
+                
+                    for(User us: LogU.users){
+                        
+                        write.println("<user>");
+                            write.println("<name>"+us.getName()+"</name>");
+                            write.println("<usr>"+us.getUser()+"</usr>");
+                            write.println("<password>"+us.getPassword()+"</password>");
+                            write.println("<role>"+us.getRole()+"</role>");
+                        write.println("</user>");
+                        
+                    }
+                write.println("</users>");
+                
+            } catch (IOException ex) {
+                Logger.getLogger(QueryUser.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                try {
+                    folder.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(QueryUser.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
    }
    
    public void jcombo(){ 
@@ -288,6 +330,7 @@ public class QueryUser extends javax.swing.JFrame {
        jComboBox1.addItem("Seller");
        jComboBox1.setSelectedIndex(-1);
    }
+   
    public void clean(){
         jTextField1.setText("");
         jTextField2.setText("");
